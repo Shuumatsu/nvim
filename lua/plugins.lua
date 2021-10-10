@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'sainnhe/gruvbox-material'
+
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -60,10 +62,11 @@ return require('packer').startup(function(use)
 
     use 'kosayoda/nvim-lightbulb'
 
+    use 'b3nj5m1n/kommentary'
     use {'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim'}
 
-    use 'b3nj5m1n/kommentary'
-
     use 'simrat39/rust-tools.nvim'
+
+    use "Pocco81/AutoSave.nvim"
 end)
 

@@ -1,3 +1,24 @@
+vim.cmd([[
+    " If the terminal supports italics, put hi Comment cterm=italic after colorshcme command.
+    hi Comment cterm=italic
+
+    if has('termguicolors')
+        set termguicolors
+    endif
+
+    " For dark version.
+    set background=dark
+    " For light version.
+    " set background=light
+
+    " Set contrast.
+    " This configuration option should be placed before `colorscheme gruvbox-material`.
+    " Available values: 'hard', 'medium'(default), 'soft'
+    let g:gruvbox_material_background = 'soft'
+
+    colorscheme gruvbox-material
+]])
+
 -- Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
@@ -11,6 +32,13 @@ vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'",
 
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.tabstop = 4 -- Number of spaces tabs count for
+vim.opt.softtabstop = 4 -- Number of spaces tabs count for
+vim.opt.shiftwidth = 4 -- Number of spaces tabs count for
+
+-- highlight current line and column
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 vim.opt.hidden = true -- Enable background buffers
 vim.opt.ignorecase = true -- Ignore case
 vim.opt.joinspaces = false -- No double spaces with join
@@ -18,11 +46,17 @@ vim.opt.list = true -- Show some invisible characters
 vim.opt.number = true -- Show line numbers
 vim.opt.smartcase = true -- Do not ignore case with capitals
 vim.opt.smartindent = true -- Insert indents automatically
+
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
+
 vim.opt.termguicolors = true -- True color support
 vim.opt.wildmode = {'list', 'longest'} -- Command-line completion mode
+
 vim.opt.wrap = false -- Disable line wrap
+
+vim.opt.autoread = true -- a file has been detected to have been changed outside of Vim, automatically read it again.
+vim.opt.scrolloff = 10 -- 光标移动到 buffer 的顶部和底部时保持 10 行距离
 
 vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}' -- disabled in visual mode
 
@@ -161,8 +195,8 @@ require'nvim-treesitter.configs'.setup {
     indent = {enable = true}
 }
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- nvim-telescope/telescope.nvim
 vim.cmd([[
@@ -172,3 +206,19 @@ vim.cmd([[
     nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 ]])
 
+-- Pocco81/AutoSave.nvim
+require'autosave'.setup({
+    enabled = true,
+    execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+    events = {"InsertLeave", "TextChanged"},
+    conditions = {
+        exists = true,
+        filename_is_not = {},
+        filetype_is_not = {},
+        modifiable = true
+    },
+    write_all_buffers = false,
+    on_off_commands = true,
+    clean_command_line_interval = 0,
+    debounce_delay = 135
+})

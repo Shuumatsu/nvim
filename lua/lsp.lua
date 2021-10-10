@@ -1,7 +1,3 @@
-local helper = require 'helper'
-
--- 
-
 local on_attach = function(_, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -47,7 +43,6 @@ local server_names = {
     'ocamlls', 'tsserver'
 }
 for _, server_name in ipairs(server_names) do
-    print(server_name)
     local ok, server = require'nvim-lsp-installer.servers'.get_server(
                            server_name)
     if ok then if not server:is_installed() then server:install() end end

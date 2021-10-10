@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/curry/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/curry/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/curry/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/curry/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/curry/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -69,101 +69,109 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["AutoSave.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\AutoSave.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp"
   },
   gruvbox = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox-material"
   },
   ["guihua.lua"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/guihua.lua"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\guihua.lua"
   },
   kommentary = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\kommentary"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim"
   },
   ["nabla.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nabla.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nabla.nvim"
   },
   ["navigator.lua"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/navigator.lua"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\navigator.lua"
   },
   neorg = {
-    config = { "\27LJ\1\2|\0\0\4\0\b\0\r4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\6\0003\2\3\0002\3\0\0:\3\4\0022\3\0\0:\3\5\2:\2\a\1>\0\2\1G\0\1\0\tload\1\0\0\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
+    config = { "\27LJ\2\n|\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tload\1\0\0\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/neorg"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neorg"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp"
   },
   ["nvim-lightbulb"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-lightbulb"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lightbulb"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/rust-tools.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\todo-comments.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/home/curry/.local/share/nvim/site/pack/packer/start/which-key.nvim"
+    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
 -- Config for: neorg
 time([[Config for neorg]], true)
-try_loadstring("\27LJ\1\2|\0\0\4\0\b\0\r4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\6\0003\2\3\0002\3\0\0:\3\4\0022\3\0\0:\3\5\2:\2\a\1>\0\2\1G\0\1\0\tload\1\0\0\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
+try_loadstring("\27LJ\2\n|\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tload\1\0\0\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
 time([[Config for neorg]], false)
 if should_profile then save_profiles() end
 
