@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\Vanis\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
+local package_path_str = "/Users/akatsuki/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/akatsuki/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/akatsuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/akatsuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/akatsuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,100 +71,124 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["AutoSave.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\AutoSave.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/AutoSave.nvim",
+    url = "https://github.com/Pocco81/AutoSave.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   gruvbox = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["gruvbox-material"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox-material"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["guihua.lua"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\guihua.lua"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
   },
   kommentary = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\kommentary"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/kommentary",
+    url = "https://github.com/b3nj5m1n/kommentary"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nabla.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nabla.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nabla.nvim",
+    url = "https://github.com/jbyuki/nabla.nvim"
   },
   ["navigator.lua"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\navigator.lua"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/navigator.lua",
+    url = "https://github.com/ray-x/navigator.lua"
   },
   neorg = {
     config = { "\27LJ\2\n|\0\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\tload\1\0\0\24core.norg.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neorg"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/vhyrro/neorg"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lightbulb"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lightbulb"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-textobjects"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter-textobjects"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\todo-comments.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Vanis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim"
+    path = "/Users/akatsuki/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

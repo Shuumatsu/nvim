@@ -2,14 +2,14 @@ local install_path = vim.fn.stdpath('data') ..
                          '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.system({
-        'git', 'clone', 'https://github.com/wbthomason/packer.nvim',
-        install_path
+    packer_bootstrap = vim.fn.system({
+        'git', 'clone', '--depth', '1',
+        'https://github.com/wbthomason/packer.nvim', install_path
     })
     vim.api.nvim_command 'packadd packer.nvim'
 end
 
-return require('packer').startup(function(use)
+require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -68,5 +68,13 @@ return require('packer').startup(function(use)
     use 'simrat39/rust-tools.nvim'
 
     use "Pocco81/AutoSave.nvim"
+
+    if packer_bootstrap then require('packer').sync() end
 end)
 
+vim.cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    augroup end
+]])
