@@ -15,6 +15,8 @@ require('packer').startup(function(use)
 
     use 'sainnhe/gruvbox-material'
 
+    use 'rcarriga/nvim-notify'
+
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/nvim-treesitter-textobjects'
 
@@ -22,8 +24,20 @@ require('packer').startup(function(use)
     use 'williamboman/nvim-lsp-installer'
 
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+
+    use 'onsails/lspkind-nvim'
+
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function() require('gitsigns').setup() end
+    }
 
     use {
         'ray-x/navigator.lua',

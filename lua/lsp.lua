@@ -25,7 +25,7 @@ local on_attach = function(_, bufnr)
                    opts)
     buf_set_keymap('n', '<space>D',
                    '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>e',
                    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
@@ -49,7 +49,7 @@ for _, server_name in ipairs(server_names) do
 end
 
 require'nvim-lsp-installer'.on_server_ready(function(server)
-    local opts = {}
+    local opts = {on_attach = on_attach, flags = {debounce_text_changes = 150}}
 
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
@@ -57,9 +57,19 @@ require'nvim-lsp-installer'.on_server_ready(function(server)
     -- end
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup{on_attach = on_attach, flags = {debounce_text_changes = 150}}
+    server:setup(opts)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
+
+require'nvim-lsp-installer'.settings {
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+}
 
 -- Rust 
 require'lspconfig'.rust_analyzer.setup {}
@@ -153,46 +163,44 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
--- COMPLETION 
-
-vim.o.completeopt = "menuone,noselect,menuone"
--- <Tab> to navigate the completion menu
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"',
-                        {expr = true})
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"',
-                        {expr = true})
-
 -- hrsh7th/nvim-cmp
 require'cmp'.setup {
     enabled = true,
-    autocomplete = true,
-    debug = false,
-    min_length = 1,
-    preselect = 'enable',
-    throttle_time = 80,
-    source_timeout = 200,
-    resolve_timeout = 800,
-    incomplete_delay = 400,
-    max_abbr_width = 100,
-    max_kind_width = 100,
-    max_menu_width = 100,
-    documentation = {
-        border = {'', '', '', ' ', '', '', '', ' '}, -- the border option is the same as `|help nvim_open_win|`
-        winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
-        max_width = 120,
-        min_width = 60,
-        max_height = math.floor(vim.o.lines * 0.3),
-        min_height = 1
+    experimental = {ghost_text = true},
+
+    sources = {
+        {name = 'nvim_lua'}, {name = 'nvim_lsp'}, {name = 'path'},
+        {name = 'buffer', keyword_length = 5}
+    },
+    formatting = {
+        format = require'lspkind'.cmp_format {
+            with_text = true,
+            menu = {
+                buffer = '[BUF]',
+                nvim_lsp = '[LSP]',
+                nvim_lua = '[API]',
+                path = '[PATH]'
+            }
+
+        }
     },
 
-    source = {
-        path = true,
-        buffer = true,
-        calc = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        vsnip = true,
-        ultisnips = true,
-        luasnip = true
+    mapping = {
+        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
+        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
+        ["<Tab>"] = function(fallback)
+            if require'cmp'.visible() then
+                require'cmp'.select_next_item()
+            else
+                fallback()
+            end
+        end,
+        ["<S-Tab>"] = function(fallback)
+            if require'cmp'.visible() then
+                require'cmp'.select_prev_item()
+            else
+                fallback()
+            end
+        end
     }
 }

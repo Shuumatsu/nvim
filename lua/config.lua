@@ -61,3 +61,5 @@ vim.opt.autoread = true -- a file has been detected to have been changed outside
 vim.opt.scrolloff = 10 -- 光标移动到 buffer 的顶部和底部时保持 10 行距离
 
 vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}' -- disabled in visual mode
+
+

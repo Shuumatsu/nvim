@@ -9,6 +9,9 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- rcarriga/nvim-notify
+vim.notify = require('notify')
+
 -- ray-x/navigator.lua
 require'navigator'.setup()
 
@@ -160,3 +163,5 @@ require'autosave'.setup({
     clean_command_line_interval = 0,
     debounce_delay = 135
 })
+
+
