@@ -163,6 +163,7 @@ require'lspconfig'.sumneko_lua.setup {
     }
 }
 
+local cmp = require 'cmp'
 -- hrsh7th/nvim-cmp
 require'cmp'.setup {
     enabled = true,
