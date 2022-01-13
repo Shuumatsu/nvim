@@ -12,6 +12,7 @@ vim.cmd([[
     set background=dark
     " For light version.
     " set background=light
+    " For tarnsparent background
 
     " Set contrast.
     " This configuration option should be placed before `colorscheme gruvbox-material`.
